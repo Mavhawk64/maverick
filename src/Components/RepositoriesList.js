@@ -8,7 +8,6 @@ export default class RepositoriesList extends React.Component {
 
   componentDidMount() {
     axios.get(`https://api.github.com/users/mavhawk64`).then(res => {
-      //console.log(res);
       this.setState({repositories: res.data});
     });
   }
@@ -17,7 +16,7 @@ export default class RepositoriesList extends React.Component {
     return (<>
       <i className="bi bi-laptop"></i>
       <h2 className="mavericks-h2">{this.state.repositories.public_repos}</h2>
-      <p><strong>Repositories</strong> uploaded to GitHub</p>
+      <p><strong>Public Repositories</strong> uploaded to GitHub</p>
       <p style={{fontSize:8+'px'}}>Number fetched using Axios with ReactJS</p>
       </>);
   }
